@@ -16,6 +16,9 @@ PS2X ps2x; // create PS2 Controller Class object
 #define NORM_SPEED 2048
 #define SERVO_POS_100_DEGREES 274 // Giá trị xung cho góc 100 độ
 #define SERVO_POS_180_DEGREES 410 // Giá trị xung cho góc 180 độ
+#define SERVO_POS_OPEN_GRIPPER 205 //Giá trị xung mở tay gắp
+#define SERVO_POS_CLOSE_GRIPPER 90 //Giá trị xung đóng tay gắp
+#define SERVO_POS_DISABLE -1 //Giá trị xung này không tồn tại, dùng khi cần vô hiệu hóa trạng thái mở góc của servo 
 #define SERVO_1_CHANNEL 2
 #define SERVO_2_CHANNEL 3
 #define TURNING_FACTOR 1
@@ -38,7 +41,7 @@ void Servo_Control(){
     setServo(SERVO_1_CHANNEL, SERVO_POS_100_DEGREES);
   }
   else if(ps2x.Button(PSB_L2)){
-    setServo(SERVO_2_CHANNEL, SERVO_POS_180_DEGREES);
+    setServo(SERVO_1_CHANNEL, SERVO_POS_180_DEGREES);
   }
 }
 
@@ -54,9 +57,35 @@ void LinearSlide_Control(){
   }
 }
 
+void LinearSlideGripper_Control(){
+  if(ps2x.Button(PSB_PAD_UP)){
+    setPWMLinear_Slide_Gripper(NORM_SPEED, 0);
+  }
+  else if(ps2x.Button(PSB_PAD_DOWN)){
+    setPWMLinear_Slide_Gripper(0,NORM_SPEED);
+  }
+  else{
+    setPWMLinear_Slide_Gripper(0,0);
+  }
+}
+void Gripper_Control(){
+  if(ps2x.Button(PSB_PAD_LEFT)){
+    setServo(SERVO_2_CHANNEL,SERVO_POS_OPEN_GRIPPER);
+  }
+  if(ps2x.Button(PSB_PAD_RIGHT)){
+    setServo(SERVO_2_CHANNEL, SERVO_POS_CLOSE_GRIPPER);
+  }
+}
+void Disable_Servo(){
+  if(ps2x.Button(PSB_START)){
+    setServo(SERVO_1_CHANNEL, SERVO_POS_DISABLE);
+    setServo(SERVO_2_CHANNEL, SERVO_POS_DISABLE);
+  }
+}
+
 bool PS2control()
 {
-  int speed = NORM_SPEED;
+  int speed = NORM_SPEED * 2/3;
   Servo_Control();
   LinearSlide_Control();
   if (ps2x.Button(PSB_R2))

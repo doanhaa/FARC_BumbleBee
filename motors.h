@@ -12,7 +12,8 @@
 #define PWM_CHANNEL4 11
 #define PWM_CHANNEL5 12
 #define PWM_CHANNEL6 13
-
+#define PWM_CHANNEL7 14
+#define PWM_CHANNEL8 15
 
 
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
@@ -35,6 +36,11 @@ void setPWMMotors(int c1, int c2, int c3, int c4)
 void setPWMLinear_Slide(int c1, int c2){
   pwm.setPin(PWM_CHANNEL5, c1);
   pwm.setPin(PWM_CHANNEL6, c2);
+}
+
+void setPWMLinear_Slide_Gripper(int c1, int c2){
+  pwm.setPin(PWM_CHANNEL7, c1);
+  pwm.setPin(PWM_CHANNEL8, c2);
 }
 
 void initMotors()
