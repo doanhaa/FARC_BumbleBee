@@ -14,7 +14,7 @@ PS2X ps2x; // create PS2 Controller Class object
 
 #define TOP_SPEED 4095
 #define NORM_SPEED 2048
-#define SERVO_POS_100_DEGREES 318 // Giá trị xung cho góc 100 độ
+#define SERVO_POS_100_DEGREES 274 // Giá trị xung cho góc 100 độ
 #define SERVO_POS_180_DEGREES 410 // Giá trị xung cho góc 180 độ
 #define SERVO_1_CHANNEL 2
 #define SERVO_2_CHANNEL 3
