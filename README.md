@@ -58,7 +58,7 @@ Chương trình được phát triển trên nền tảng **Arduino IDE**.
 
 | Kênh PWM (PCA9685) | Cơ cấu | Chức năng |
 | :--- | :--- | :--- |
-| 8, 9, 10, 11 | 4 Động cơ DC | Di chuyển robot |
+| 8, 9, 10, 11 | 2 Động cơ DC | Di chuyển robot |
 | 12, 13 | Động cơ DC | Thanh trượt tuyến tính chính |
 | 14, 15 | Động cơ DC | Thanh trượt tuyến tính trên tay gắp |
 | 2 | Servo 1 | Điều khiển góc (100°/180°) |
