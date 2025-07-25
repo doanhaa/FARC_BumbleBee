@@ -49,7 +49,6 @@ Chương trình được phát triển trên nền tảng **Arduino IDE**.
 | Linh kiện | Chân Via B | Ghi chú |
 | :--- | :--- | :--- |
 | **Mạch công suất** | | Kết nối qua shield mở rộng |
-
 | **Tay cầm PS2** | `DAT` (GPIO 12) | Dữ liệu (MOSI) |
 | | `CMD` (GPIO 13) | Lệnh (MISO) |
 | | `SEL` (GPIO 15) | Chọn (SS) |
