@@ -26,6 +26,7 @@ PS2X ps2x; // create PS2 Controller Class object
 #define SINGLE_HAND_DRIVING 0
 #define TWO_HAND_DRIVING 1
 bool driving_mode = SINGLE_HAND_DRIVING;
+bool flag_slides = false;
 void setupPS2controller()
 {
   int err = -1;
@@ -83,10 +84,15 @@ void Disable_Servo(){
   }
 }
 
+
 bool PS2control()
 {
   int speed = NORM_SPEED * 2/3;
   Servo_Control();
+  LinearSlide_Control();
+  LinearSlideGripper_Control();
+  Gripper_Control();
+  Disable_Servo();
   LinearSlide_Control();
   if (ps2x.Button(PSB_R2))
     speed = TOP_SPEED;
@@ -145,6 +151,10 @@ bool PS2control()
     c2 = abs(nMotMixL);
     c2 = map(c2, 0, 128, 0, speed);
   }
-  setPWMMotors(c1, c2, c3, c4);
-  return 1;
+  if(!ps2x.Button(PSB_R1))
+    setPWMMotors(c1, c2, c3, c4);
+  if(ps2x.Button(PSB_R1) && (!ps2x.Button(PSB_GREEN) && !ps2x.Button(PSB_BLUE))){
+    setPWMLinear_and_Motors(c1,c2,c3,c4,TOP_SPEED,0);
+    }
+ return 1;
 }

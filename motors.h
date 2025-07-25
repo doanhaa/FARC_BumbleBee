@@ -43,6 +43,14 @@ void setPWMLinear_Slide_Gripper(int c1, int c2){
   pwm.setPin(PWM_CHANNEL8, c2);
 }
 
+void setPWMLinear_and_Motors(int c1, int c2, int c3, int c4, int c5, int c6){
+  pwm.setPin(PWM_CHANNEL1, c1);
+  pwm.setPin(PWM_CHANNEL2, c2);
+  pwm.setPin(PWM_CHANNEL3, c3);
+  pwm.setPin(PWM_CHANNEL4, c4);
+  pwm.setPin(PWM_CHANNEL5, c5);
+  pwm.setPin(PWM_CHANNEL6, c6);
+}
 void initMotors()
 {
   Wire.begin(); // SDA, SCL,400000);

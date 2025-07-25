@@ -19,11 +19,6 @@ void setup()
 void loop()
 {
   ps2x.read_gamepad(0, 0);
-  Servo_Control();
-  LinearSlide_Control();
-  LinearSlideGripper_Control();
-  Gripper_Control();
-  Disable_Servo();
   PS2control();
   delay(50);
 }
