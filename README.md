@@ -1,10 +1,10 @@
 # 🐝 BumbleBee - FARC 2025 - Đội FU0501
 
-Đây là mã nguồn chính thức cho robot **BumbleBee** của đội **FU0501**, tham gia Vòng chung kết cuộc thi **FPTU AI & ROBOTICS CHALLENGE 2025 (FARC 2025)**.
+Đây là mã nguồn chính thức cho Minibot của đội **BumbleBee** - **FU0501**, tham gia Vòng chung kết cuộc thi **FPTU AI & ROBOTICS CHALLENGE 2025 (FARC 2025)**.
 
 ## 📝 Giới thiệu
 
-BumbleBee là một robot được thiết kế để thực hiện các nhiệm vụ trong cuộc thi FARC 2025. Robot được điều khiển không dây thông qua tay cầm PS2, có khả năng di chuyển linh hoạt, và được trang bị các cơ cấu chấp hành như tay gắp, thanh trượt tuyến tính để hoàn thành các yêu cầu của bài thi.
+Minibot được thiết kế để thực hiện các nhiệm vụ trong cuộc thi FARC 2025. Robot được điều khiển không dây thông qua tay cầm PS2, có khả năng di chuyển linh hoạt, và được trang bị các cơ cấu chấp hành như tay gắp, thanh trượt tuyến tính để hoàn thành các yêu cầu của bài thi.
 
 ## 🖼️ Sơ đồ hệ thống
 
