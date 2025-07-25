@@ -39,7 +39,7 @@ Chương trình được phát triển trên nền tảng **Arduino IDE**.
 1.  **`PS2X_lib`**: Dùng để giao tiếp với tay cầm PS2. 
     *   Cài đặt: Tải từ [đây](https://github.com/madsci1016/Arduino-PS2X) hoặc cài đặt qua Library Manager của Arduino IDE.
 2.  **`Adafruit_PWMServoDriver`**: Dùng để điều khiển mạch PCA9685.
-    *   Cài đặt: Tải từ [đay](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library) hoặc cài đặt qua Library Manager của Arduino IDE.
+    *   Cài đặt: Tải từ [đây](https://github.com/makerviet/Arduino-PS2X-ESP32-Makerbot) hoặc cài đặt qua Library Manager của Arduino IDE.
 3.  **`Wire.h`**: Thư viện giao tiếp I2C (có sẵn trong Arduino IDE).
 
 ## 🔌 Sơ đồ kết nối (Pinout)
@@ -100,3 +100,5 @@ Chương trình được phát triển trên nền tảng **Arduino IDE**.
 
 Mã nguồn được chỉnh sửa và phát triển bởi **Doanhaa** từ đội ** BumbleBee FU0501**, dựa trên chương trình robot mẫu của ban tổ chức.
 
+## Note
+Bạn có thể sử dụng mã nguồn này để tham khảo, xin đừng đánh giá trình độ của tôi :(
