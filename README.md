@@ -98,7 +98,7 @@ Chương trình được phát triển trên nền tảng **Arduino IDE**.
 
 ## 👥 Tác giả
 
-Mã nguồn được chỉnh sửa và phát triển bởi **Doanhaa** từ đội ** BumbleBee FU0501**, dựa trên chương trình robot mẫu của ban tổ chức.
+Mã nguồn được chỉnh sửa và phát triển bởi **Doanhaa** từ đội **BumbleBee FU0501**, dựa trên chương trình robot mẫu của ban tổ chức.
 
 ## Note
 Bạn có thể sử dụng mã nguồn này để tham khảo, xin đừng đánh giá trình độ của tôi :(
