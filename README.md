@@ -68,19 +68,20 @@ Chương trình được phát triển trên nền tảng **Arduino IDE**.
 
 | Nút | Chức năng |
 | :--- | :--- |
-| **Joysticks** | Di chuyển robot (hỗ trợ 2 chế độ 1 tay và 2 tay) |
-| `SELECT` | Chuyển đổi giữa chế độ lái 1 tay và 2 tay |
-| `R2` | Tăng tốc (chạy ở tốc độ tối đa) |
-| `L1` | Đưa Servo 1 về góc 100° |
-| `L2` | Đưa Servo 1 về góc 180° |
-| `Nút Tam giác` | Nâng thanh trượt chính |
-| `Nút Chữ X` | Hạ thanh trượt chính |
-| `D-Pad Lên` | Duỗi thanh trượt trên tay gắp |
-| `D-Pad Xuống` | Co thanh trượt trên tay gắp |
-| `D-Pad Trái` | Mở tay gắp |
-| `D-Pad Phải` | Đóng tay gắp |
-| `START` | Vô hiệu hóa tất cả các Servo (trạng thái an toàn) |
-| `R1` | Chế độ đặc biệt: Vừa di chuyển vừa nâng thanh trượt chính |
+| **Joysticks (Analog)** | Di chuyển robot. | 
+| `SELECT` | Chuyển đổi giữa chế độ lái 1 tay (`SINGLE_HAND_DRIVING`) và 2 tay (`TWO_HAND_DRIVING`). | 
+| `R1` | Đảo ngược chiều điều khiển của joystick. | 
+| `R2` | Giữ để chạy ở tốc độ tối đa (`TOP_SPEED`). | 
+| `L1` | Đưa Servo 1 (cơ cấu góc) về vị trí 100 độ. | 
+| `L2` | Đưa Servo 1 (cơ cấu góc) về vị trí 180 độ. | 
+| `Nút Tam giác` (GREEN) | Nâng thanh trượt tuyến tính chính. | 
+| `Nút Chữ X` (BLUE) | Hạ thanh trượt tuyến tính chính. | 
+| `D-Pad Lên` | Duỗi thanh trượt tuyến tính trên tay gắp. | 
+| `D-Pad Xuống` | Co thanh trượt tuyến tính trên tay gắp. | 
+| `D-Pad Trái` | Mở tay gắp (Servo 2). | 
+| `D-Pad Phải` | Đóng tay gắp (Servo 2). | 
+| `START` | Vô hiệu hóa cả 2 Servo (trạng thái an toàn). | 
+| `L3` | Giữ để kích hoạt chế độ đặc biệt: Vừa di chuyển robot vừa nâng thanh trượt chính. |
 
 ## 🚀 Hướng dẫn cài đặt và sử dụng
 
