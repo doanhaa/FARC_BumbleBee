@@ -6,6 +6,10 @@
 
 Minibot được thiết kế để thực hiện các nhiệm vụ trong cuộc thi FARC 2025. Robot được điều khiển không dây thông qua tay cầm PS2, có khả năng di chuyển linh hoạt, và được trang bị các cơ cấu chấp hành như tay gắp, thanh trượt tuyến tính để hoàn thành các yêu cầu của bài thi.
 
+## 🤖 Hình ảnh Robot
+
+![Minibot Final Version](minibot_final_version.png)
+
 ## 🖼️ Sơ đồ hệ thống
 
 ### Sơ đồ khối chức năng
