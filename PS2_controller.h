@@ -18,7 +18,7 @@ PS2X ps2x; // create PS2 Controller Class object
 #define SERVO_POS_180_DEGREES 410 // Giá trị xung cho góc 180 độ
 #define SERVO_POS_OPEN_GRIPPER 205 //Giá trị xung mở tay gắp
 #define SERVO_POS_CLOSE_GRIPPER 90 //Giá trị xung đóng tay gắp
-#define SERO_POS_DISABLE -1 //Giá trị xung này không tồn tại, dùng khi cần vô hiệu hóa trạng thái mở góc của servo 
+#define SERVO_POS_DISABLE -1 //Giá trị xung này không tồn tại, dùng khi cần vô hiệu hóa trạng thái mở góc của servo 
 #define SERVO_1_CHANNEL 2
 #define SERVO_2_CHANNEL 3
 #define TURNING_FACTOR 1
