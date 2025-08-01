@@ -74,8 +74,8 @@ Chương trình được phát triển trên nền tảng **Arduino IDE**.
 | `R2` | Giữ để chạy ở tốc độ tối đa (`TOP_SPEED`). | 
 | `L1` | Đưa Servo 1 (cơ cấu góc) về vị trí 100 độ. | 
 | `L2` | Đưa Servo 1 (cơ cấu góc) về vị trí 180 độ. | 
-| `Nút Tam giác` (GREEN) | Nâng thanh trượt tuyến tính chính. | 
-| `Nút Chữ X` (BLUE) | Hạ thanh trượt tuyến tính chính. | 
+| `Nút Tam giác (GREEN)` | Nâng thanh trượt tuyến tính chính. | 
+| `Nút Chữ X (BLUE)` | Hạ thanh trượt tuyến tính chính. | 
 | `D-Pad Lên` | Duỗi thanh trượt tuyến tính trên tay gắp. | 
 | `D-Pad Xuống` | Co thanh trượt tuyến tính trên tay gắp. | 
 | `D-Pad Trái` | Mở tay gắp (Servo 2). | 
