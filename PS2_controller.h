@@ -18,15 +18,20 @@ PS2X ps2x; // create PS2 Controller Class object
 #define SERVO_POS_180_DEGREES 410 // Giá trị xung cho góc 180 độ
 #define SERVO_POS_OPEN_GRIPPER 205 //Giá trị xung mở tay gắp
 #define SERVO_POS_CLOSE_GRIPPER 90 //Giá trị xung đóng tay gắp
-#define SERVO_POS_DISABLE -1 //Giá trị xung này không tồn tại, dùng khi cần vô hiệu hóa trạng thái mở góc của servo 
+#define SERO_POS_DISABLE -1 //Giá trị xung này không tồn tại, dùng khi cần vô hiệu hóa trạng thái mở góc của servo 
 #define SERVO_1_CHANNEL 2
 #define SERVO_2_CHANNEL 3
 #define TURNING_FACTOR 1
 
 #define SINGLE_HAND_DRIVING 0
 #define TWO_HAND_DRIVING 1
+
+#define REVERSE_JOYSTICK 1
+#define NON_REVERSE_JOYSTICK 0
+
+bool joystick_mode = NON_REVERSE_JOYSTICK;
 bool driving_mode = SINGLE_HAND_DRIVING;
-bool flag_slides = false;
+
 void setupPS2controller()
 {
   int err = -1;
@@ -87,28 +92,37 @@ void Disable_Servo(){
 
 bool PS2control()
 {
-  int speed = NORM_SPEED * 2/3;
+  int speed = NORM_SPEED ;
   Servo_Control();
   LinearSlide_Control();
   LinearSlideGripper_Control();
   Gripper_Control();
   Disable_Servo();
-  LinearSlide_Control();
   if (ps2x.Button(PSB_R2))
     speed = TOP_SPEED;
    if (ps2x.ButtonPressed(PSB_SELECT))
     driving_mode =! driving_mode;
+  if (ps2x.ButtonPressed(PSB_R1))
+    joystick_mode =! joystick_mode;
 
   int nJoyX = X_JOY_CALIB - ps2x.Analog(PSS_RX); // read x-joystick
   int nJoyY = Y_JOY_CALIB - (driving_mode ? ps2x.Analog(PSS_LY) :ps2x.Analog(PSS_RY)); // read y-joystick
-  int nMotMixL;                          // Motor (left) mixed output
-  int nMotMixR;                          // Motor (right) mixed output
 
   if(nJoyX == -1 && nJoyY == 0) // in case of lost connection with the wireless controller, only used in VRC2023 PS2 wireless controller 
   {
     setPWMMotors(0, 0, 0, 0);
     return 0;
   }
+  
+  if(joystick_mode == REVERSE_JOYSTICK){
+    nJoyX = -nJoyX;
+    nJoyY = -nJoyY;
+  }
+
+  int nMotMixL;                          // Motor (left) mixed output
+  int nMotMixR;                          // Motor (right) mixed output
+
+
 
   bool temp = (nJoyY * nJoyX > 0);
   if (nJoyX) // Turning
@@ -151,9 +165,9 @@ bool PS2control()
     c2 = abs(nMotMixL);
     c2 = map(c2, 0, 128, 0, speed);
   }
-  if(!ps2x.Button(PSB_R1))
+  if(!ps2x.Button(PSB_L3))
     setPWMMotors(c1, c2, c3, c4);
-  if(ps2x.Button(PSB_R1) && (!ps2x.Button(PSB_GREEN) && !ps2x.Button(PSB_BLUE))){
+  if(ps2x.Button(PSB_L3) && (!ps2x.Button(PSB_GREEN) && !ps2x.Button(PSB_BLUE))){
     setPWMLinear_and_Motors(c1,c2,c3,c4,TOP_SPEED,0);
     }
  return 1;
